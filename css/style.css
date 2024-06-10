@@ -5,11 +5,10 @@
 	box-sizing: border-box;
 }
 
-::selection {
-	background: #00aab3;
-}
+::selection,
 ::-moz-selection {
 	background: #00aab3;
+	color: #000000;
 }
 
 a, button {
@@ -17,12 +16,26 @@ a, button {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+.font-pjs,
+.font-pjs-semibold {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-pjs-semibold {
+  font-weight: 800;
+}
+
+
 body {
-	font-family: 'Roboto Mono', Consolas, monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 16px;
 	font-weight: 500;
+	letter-spacing: 0.025em;
 	color: #c8cfd2;
-	background-color: #200b3c;
+	background-color: #000000;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	animation: animateBg 20s linear infinite;
@@ -158,20 +171,21 @@ main {
 }
 
 /* Header */
-.codrops-header {
+.tkno-header {
 	position: relative;
 	width: 100%;
 	padding: 3em 1em 4em;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
 }
 
-.codrops-header__title {
-	font-size: 1em;
-	font-weight: normal;
+.tkno-header__title {
 	flex: 1;
 	text-align: center;
 }
 
-.codrops-header a{
+.tkno-header a{
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -180,7 +194,7 @@ main {
 
 
 /* Top Navigation Style */
-.codrops-links {
+.tkno-links {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -192,7 +206,7 @@ main {
 	background: #1f2125;
 }
 
-.codrops-links::after {
+.tkno-links::after {
 	content: '';
 	position: absolute;
 	top: -10%;
@@ -203,7 +217,7 @@ main {
 	transform: rotate3d(0,0,1,22.5deg);
 }
 
-.codrops-icon {
+.tkno-icon {
 	display: inline-block;
 	padding: 0 0.65em;
 }
@@ -373,21 +387,13 @@ b.highlight {
   padding: 0 5px;
 }
 
-.gradient-text {
-	background: #0077b3;
-	background: -webkit-linear-gradient(180deg, #0077b3 0%,#00998c 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(180deg, #0077b3 0%,#00998c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-	width: 100%;
-}
 .gradient-text-90 {
 	background: #0077b3;
-	background: -webkit-linear-gradient(90deg, #0077b3 0%,#00998c 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(90deg, #0077b3 0%,#00998c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -webkit-linear-gradient(90deg, #3380ff 0%,#a150ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(90deg, #3380ff 0%,#a150ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-	width: 100%;
+	display: inline-block;
 }
 
 .jr-bio {
@@ -396,15 +402,14 @@ b.highlight {
 
 a.popup-link img {
   transition: all .3s ease-in-out;
-  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-  filter: grayscale(0%); /* FF 35+ */
+  -webkit-filter: contrast(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: contrast(100%); /* FF 35+ */
   /* border: 1px solid transparent; */
 }
 
 a.popup-link  img:hover {
-  -webkit-filter: grayscale(65%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-  filter: grayscale(65%); /* FF 35+ */
-  /* border: 1px solid #00998c; */
+  -webkit-filter: contrast(120%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: contrast(120%); /* FF 35+ */
 	
   box-shadow: 0px 7px 12px 6px rgba(0, 0, 0, 0.2);
   transform: translate(0, -6px);
@@ -415,6 +420,24 @@ a.popup-link  img:hover {
 
 
 @keyframes animateBg {
+  0% {
+		background-color: #0c0416;
+	}
+  35% {
+		background-color: #070620;
+	}
+  60% {
+		background-color: #180420;
+  }
+  85% {
+		background-color: #020103;
+	}
+}
+
+
+
+/* OLD BG COLORS */
+/* @keyframes animateBg {
   0% {
 		background-color: #200b3c;
 	}
@@ -442,7 +465,7 @@ a.popup-link  img:hover {
   85% {
 		background-color: #200b3c;
 	}
-}
+} */
 
 
 /* START Filter ISOTOPE */
@@ -823,14 +846,14 @@ li.balsamiq {
 	main {
 		display: block;
 	}
-	.codrops-header {
+	.tkno-header {
 		padding: 1em;
 		flex-wrap: wrap;
 	}
-	.codrops-links {
+	.tkno-links {
 		margin: 0;
 	}
-	.codrops-header__title {
+	.tkno-header__title {
 		width: 100%;
 		flex: none;
 		margin: 1em 0;
