@@ -198,6 +198,14 @@ header li {
   margin-right: 2em;
 }
 
+.cta-button,
+.cta-button:hover {
+  background: var(--violet);
+  color: #000;
+  padding: .5em 1em;
+  border-radius: 100px;
+}
+
 /* 
 header li:last-child {
     margin: 2em 0 .25em;
@@ -825,9 +833,6 @@ li.balsamiq {
     max-width: 100%;
     margin-bottom: 10px;
   }
-
-
-  
 
 }
 
