@@ -1,3 +1,10 @@
+:root {
+  --violet: #6969dd;
+  --darkviolet: #5b5990;
+  --white: #ffffff;
+}
+
+
 *,
 *::after,
 *::before {
@@ -25,7 +32,19 @@ a, button {
 }
 
 .font-pjs-semibold {
+  font-weight: 600;
+}
+
+.font-pjs-extrabold {
   font-weight: 800;
+}
+
+.text-violet {
+  color: var(--violet)
+}
+
+.text-darkviolet {
+  color: var(--darkviolet)
 }
 
 
@@ -157,15 +176,45 @@ main {
   margin: 0 auto;
 }
 
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 1.5em; /* Adjust as needed */
+}
+
 header ul {
-  list-style-type: none; /* Remove the bullets */
-  padding: 0; /* Remove default padding */
+  list-style-type: none; 
+  padding: 0; 
 }
 
 header li {
-  display: inline-block; /* Display list items inline */
-  margin-right: 2em; /* Optional: Add some spacing between list items */
+  display: inline-block; 
+  margin-right: 2em;
 }
+
+/* 
+header li:last-child {
+    margin: 2em 0 .25em;
+} */
+
+header h1.name {
+  margin: 2em 0 .25em;
+}
+
+header h1.description {
+  margin: .25em 0 1em
+}
+
+.mobile-hidden {
+  display: inline;
+}
+
 
 /* Top Navigation Style */
 .tkno-links {
@@ -290,8 +339,6 @@ header li {
 }
 
 
-
-
 /* --- Start JR Custom--- */
 
 b.highlight {
@@ -299,15 +346,6 @@ b.highlight {
   background: rgba(85,200,200,.2);
   color: #fff;
   padding: 0 5px;
-}
-
-.gradient-text-90 {
-	background: #0077b3;
-	background: -webkit-linear-gradient(90deg, #3380ff 0%,#7165ff 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(90deg, #3380ff 0%,#7165ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-	display: inline-block;
 }
 
 .jr-bio {
@@ -711,7 +749,16 @@ li.balsamiq {
   }	
 }
 
-@media screen and (max-width: 40em) { /*800 px */
+@media screen and (max-width: 40em) { /*640 px */
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
   body {
     font-size: 14px;
   }
@@ -719,10 +766,12 @@ li.balsamiq {
 	main {
 		display: block;
 	}
+  
 	.tkno-header {
 		padding: 1em;
 		flex-wrap: wrap;
 	}
+
 	.tkno-links {
 		margin: 0;
 	}
@@ -745,9 +794,11 @@ li.balsamiq {
   .grid__img {
     border-radius: 8px;
   }
+
 	.hamburger .line {
 		background-color: #163d46;
 	}
+
   ul li.category,
   ul li.tech-used{
     margin: 4px 0;
@@ -774,6 +825,8 @@ li.balsamiq {
     max-width: 100%;
     margin-bottom: 10px;
   }
+
+
   
 
 }
