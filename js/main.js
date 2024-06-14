@@ -290,8 +290,6 @@ $(document).ready(function(){
 	// Clicked on startup
     $(".year-toggle-btn").trigger('click');
 
-
-
   // Filters and Sort Mobile
     $(".sort-button-group > button").click(function(){
     $(".sort-button-group > .btn-mobile-options").toggleClass("is-shown");
