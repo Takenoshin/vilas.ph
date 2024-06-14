@@ -763,31 +763,49 @@ li.balsamiq {
 
 /*  Marquee  */
 
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.marquee-content ul {
-  list-style-type: none;
-  padding: 0; 
-  margin: 0; 
-  display: block; 
-  width: 100%; 
-  opacity: .4;
-}
-
 .marquee-content li {
   display: inline; 
   margin: 0;
   padding: 0; 
   font-size: 2em;
-  margin: .5em;
 }
 
+.marquee {
+  --gap: .5rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  opacity: .5;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Enable animation */
+.enable-animation .marquee__content {
+  animation: scroll 30s linear infinite;
+}
+
+/* Reverse animation */
+.marquee--reverse .marquee__content {
+  animation-direction: reverse;
+}
 
 /* END Magni */
 
