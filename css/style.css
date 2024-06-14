@@ -763,6 +763,10 @@ li.balsamiq {
 
 /*  Marquee  */
 
+footer {
+  overflow: hidden;
+}
+
 .marquee-content li {
   display: inline; 
   margin: 0;
