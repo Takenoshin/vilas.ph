@@ -355,6 +355,10 @@ b.highlight {
 	text-align: center;
 }
 
+.jr-bio p {
+  line-height: 1.8;
+}
+
 a.popup-link img {
   transition: all .3s ease-in-out;
   -webkit-filter: contrast(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
@@ -568,6 +572,12 @@ div.col-2,
 div.col-3 {
   margin: 12px 0;
   float: left;
+}
+
+span.highlight {    
+  color: var(--violet);
+  padding: 2px 4px;
+  background: #18142f;
 }
 
 .mfp-content img.col {
