@@ -48,6 +48,10 @@ a, button {
   color: var(--darkviolet)
 }
 
+.text-white {
+  color: var(--white)
+}
+
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -757,6 +761,34 @@ li.balsamiq {
 }
 
 
+/*  Marquee  */
+
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.marquee-content ul {
+  list-style-type: none;
+  padding: 0; 
+  margin: 0; 
+  display: block; 
+  width: 100%; 
+  opacity: .4;
+}
+
+.marquee-content li {
+  display: inline; 
+  margin: 0;
+  padding: 0; 
+  font-size: 2em;
+  margin: .5em;
+}
+
+
 /* END Magni */
 
 
@@ -874,6 +906,10 @@ li.balsamiq {
   .mfp-content img.col-3 {
     max-width: 100%;
     margin-bottom: 10px;
+  }
+
+  .marquee-content li {
+    font-size: 1.5em;
   }
 
 }
