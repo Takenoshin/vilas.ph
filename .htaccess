@@ -36,3 +36,16 @@
 # <FilesMatch "\.pdf$">
 #   Header set X-Robots-Tag "noindex"
 # </FilesMatch>
+
+#Redirect 404s to Index
+ErrorDocument 404 /
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* / [L,R=301]
+
+
+#NO-INDEX PDFs
+<FilesMatch "\.pdf$">
+  Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>
