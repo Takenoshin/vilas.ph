@@ -809,7 +809,6 @@ li.balsamiq {
 
 .case-study > div:has(img) {
   padding: 0;
-  background-color: none;
 }
 
 .case-study img {
@@ -1024,6 +1023,20 @@ footer {
 
   .exp-item {
     flex: 0 1 100%;
+  }
+
+  .case-study.table {
+    overflow: auto;
+  }
+
+  .mobile-1-column {
+    display: flex;
+    flex: 0 0 calc(100%); 
+  }
+
+  .mobile-2-column {
+    display: flex;
+    flex: 0 0 calc(50% - 0.5em); 
   }
 
 
