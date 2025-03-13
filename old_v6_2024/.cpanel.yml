@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sukicctz/vilasph-git
+    - /bin/cp -R $SOURCE_DIR/* $DEPLOYPATH
