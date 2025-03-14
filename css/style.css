@@ -1029,13 +1029,38 @@ footer {
     overflow: auto;
   }
 
-  .mobile-1-column {
+  .mobile-1-column > div {
     display: flex;
     flex: 0 0 calc(100%); 
   }
 
-  .mobile-2-column {
+  .mobile-1-column.horizontal  {  
     display: flex;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .case-study.horizontal > div {
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    text-align: left;
+    gap: 1em;
+  }
+  
+  .case-study.horizontal > div img {
+    flex: 0 0 35%;
+    max-width: 35%;
+    height: auto ;
+  }
+  
+  .case-study.horizontal > div p {
+    flex: 1 ;
+    margin: 0 ;
+  }
+  
+
+  .mobile-2-column > div {
     flex: 0 0 calc(50% - 0.5em); 
   }
 
