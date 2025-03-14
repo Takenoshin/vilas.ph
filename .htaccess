@@ -45,12 +45,34 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* / [L,R=301]
 
 
-#NO-INDEX PDFs
+# Enable mod_rewrite
+RewriteEngine On
+
+# ------------------------------------------------------
+# 1. Redirect to non-WWW version
+RewriteCond %{HTTP_HOST} ^www\.yourdomain\.com [NC]
+RewriteRule ^(.*)$ https://yourdomain.com/$1 [R=301,L]
+
+# ------------------------------------------------------
+# 2. Clean URL for works.html → /works
+RewriteRule ^works$ works.html [L]
+
+# Optional: Redirect users accessing works.html to /works
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/works\.html [NC]
+RewriteRule ^works\.html$ /works [R=301,L]
+
+# ------------------------------------------------------
+# 3. Catch-all redirect for non-existing files/folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* / [L,R=301]
+
+# ------------------------------------------------------
+# 4. Custom 404 page
+ErrorDocument 404 /
+
+# ------------------------------------------------------
+# 5. NO-INDEX all PDFs
 <FilesMatch "\.pdf$">
   Header set X-Robots-Tag "noindex, nofollow"
 </FilesMatch>
-
-#Set WWW to non-WWW
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.yourdomain\.com [NC]
-RewriteRule ^(.*)$ https://yourdomain.com/$1 [R=301,L]
