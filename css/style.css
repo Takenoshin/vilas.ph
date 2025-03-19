@@ -399,7 +399,7 @@ a.popup-link:hover {
   color: rgba(200,190,222,.5);
 }
 .exp-item.cert {
-  flex: 0 100%;
+  flex: 0 1 100%;
 }
 
 .exp-pic img {
