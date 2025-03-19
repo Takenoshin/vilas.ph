@@ -398,6 +398,9 @@ a.popup-link:hover {
   border-radius: 1em;
   color: rgba(200,190,222,.5);
 }
+.exp-item.cert {
+  flex: 0 100%;
+}
 
 .exp-pic img {
   margin: 1.5em;
