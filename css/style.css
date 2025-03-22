@@ -384,7 +384,7 @@ a.popup-link:hover {
   max-width: 1000px;
   margin: 0 auto;
   text-align: left;
-  justify-content: center;
+  justify-content: flex;
 }
 
 .exp-item {
@@ -803,8 +803,9 @@ li.balsamiq {
   flex: 1 1 0;
   display: flex; /* <-- Turn each box into a flex container */
   flex-direction: column;
-  justify-content: center; /* <-- Vertically center the content */
+  justify-content: flex-start; /* <-- Vertically center the content */
   padding: 2em 1em;
+    justify-content: flex-start;
   margin-bottom: 1em;
   background-color: rgba(107, 120, 136, .2);
   border-radius: 1em;
