@@ -55,11 +55,11 @@ RewriteRule ^(.*)$ https://yourdomain.com/$1 [R=301,L]
 
 # ------------------------------------------------------
 # 2. Clean URL for works.html → /works
-# RewriteRule ^works$ works.html [L]
+RewriteRule ^works$ works.html [L]
 
 # Optional: Redirect users accessing works.html to /works
-# RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/works\.html [NC]
-# RewriteRule ^works\.html$ /works [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/works\.html [NC]
+RewriteRule ^works\.html$ /works [R=301,L]
 
 # ------------------------------------------------------
 # 3. Catch-all redirect for non-existing files/folders
