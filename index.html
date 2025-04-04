@@ -22,10 +22,10 @@
 
 	</head>
 	<body class="loading">
+		<button id="theme-toggle" class="theme-toggle">🌓</button>
 
-    
+  
 		<main>
-
 
 			<header class="tkno-header">
           
@@ -47,8 +47,8 @@
 					</div>
 			</div>
 			
-				<h1 class="font-pjs-extrabold text-white name">Hello, I'm Bernardo Vilas.</h1>
-				<h1 class="font-pjs-extrabold text-darkviolet description">	
+				<h1 class="font-pjs-extrabold text-normal name">Hello, I'm Bernardo Vilas.</h1>
+				<h1 class="font-pjs-extrabold text-darkviolet description" style="font-weight: 500;letter-spacing: 0;">	
 					I help  <span class="text-violet">businesses of all sizes </span>turn<span class="text-violet"> ideas</span> into<br class="mobile-hidden">
 					<span class="text-violet">user-centered solutions</span> aligned with <span class="text-violet">business goals.</span><br class="mobile-hidden">
 				</h1>
@@ -58,9 +58,24 @@
 			
 			<div class="content content--center">
           
-				<h1 class="font-pjs-extrabold text-white" style="text-align: center;">Case Studies & Project Stories</h1>
+				<h1 class="font-pjs-extrabold text-normal" style="text-align: center;">Case Studies & Project Stories</h1>
 				<div class="grid grid--type-c">
         
+					<div class="grid__sizer"></div>
+					
+					<div class="grid__item graphic" data-year="2020">
+						<a class="grid__link popup-link" href="cs4.html">
+							<img class="grid__img" src="img/cs4/thumb.png" alt="Image" />
+							
+							<div class="grid-content" style="margin: 1em 0;">
+								<p class="grid-title">Telehealth Subscription Platform</p>
+								<ul class="roles-container">
+									<li class="tech-used">2025</li>
+									<li class="tech-used">Product Design</li>	
+								</ul>
+							</div>
+						</a>
+					</div>
 					<div class="grid__sizer"></div>
 					
 					<div class="grid__item graphic" data-year="2020">
@@ -136,7 +151,7 @@
 			</div>
 
 			<div class="clients content content--related" style="text-align: center;">
-				<h1 class="font-pjs-extrabold text-white">Projects & Brands Involved</h1>
+				<h1 class="font-pjs-extrabold text-normal">Projects & Brands Involved</h1>
 				<section class="client-grid">
 					<img src="img/client-gfuel.svg" alt="">
 					<img src="img/client-primegaming.svg" alt="">
@@ -151,7 +166,7 @@
 			</div>
 
 			<div class="experience content content--related" style="text-align: center;">
-				<h1 class="font-pjs-extrabold text-white" style="display: block; width: 100%;">Experience</h1>
+				<h1 class="font-pjs-extrabold text-normal" style="display: block; width: 100%;">Experience</h1>
 
 				<div class="exp-container">
 
@@ -200,14 +215,14 @@
 			</div>
 
 			<div class="certifications content content--related" style="text-align: center;">
-				<h1 class="font-pjs-extrabold text-white" style="display: block; width: 100%;">Certifications</h1>
+				<h1 class="font-pjs-extrabold text-normal" style="display: block; width: 100%;">Certifications</h1>
 
 				<div class="exp-container">
 
 					<div class="exp-item cert">
 						<div class="exp-pic"><img src="img/cert-1.svg" height="64"/></div>
 						<div class="exp-content">
-							<p>SKILLUP EDTECH &emsp;2025</p>
+							<p>COURSERA &emsp;2025</p>
 							<span class="font-pjs-extrabold">IBM Product Owner</span>
 						</div>
 					</div>
@@ -218,7 +233,7 @@
 
       
 			<footer class="content content--related">
-				<h1 class="font-pjs-extrabold text-white name">Skills & Tool Stack</h1>
+				<h1 class="font-pjs-extrabold text-normal name">Skills & Tool Stack</h1>
 
 					<section class="enable-animation">
 						<div class="marquee">
@@ -334,6 +349,22 @@
 		<script src="js/anime.min.js"></script>
  		<script src="js/magnific.js"></script>
 		<script src="js/main.js"></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const toggleBtn = document.getElementById('theme-toggle');
 		
+				// Load saved theme preference
+				if (localStorage.getItem('theme') === 'dark') {
+					document.body.classList.add('darkmode');
+				}
+		
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.body.classList.toggle('darkmode');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			});
+		</script>
+
 	</body>
 </html>

@@ -321,8 +321,9 @@ $(document).ready(function(){
 		mainClass: 'mfp-fade'
 	});
 
-	
+
 	 
 });
+
 
 //END Custom
